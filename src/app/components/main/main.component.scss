@@ -1,0 +1,16 @@
+.container {
+    max-width: 90%;
+    width: 980px;
+    margin: 0 auto;
+}
+.main {
+    display: grid;
+    grid-gap: 2%;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    app-transaction-list {
+        grid-column: auto;
+        box-shadow: 0 0 5px 1px rgba(0,0,0,0.3);
+        background-color: #fff;
+    }
+}

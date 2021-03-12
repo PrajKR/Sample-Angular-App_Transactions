@@ -1,0 +1,28 @@
+.mat-dialog-title {
+    margin: 0;
+    display: block;
+    font-size: 0.75rem;
+}
+mat-dialog-content{
+    display: block;
+    ul{
+        li {
+            display: flex;
+            justify-content: space-between;
+            padding: .5em 0;
+            label{
+               &:first-child{
+                   padding-right: 0.5em;
+               }
+               &:last-child{
+                padding-left: 0.5em;
+                }
+            }
+        }
+    }
+}
+mat-dialog-actions{
+    .primary{
+        margin-left: 1em;
+    }
+}

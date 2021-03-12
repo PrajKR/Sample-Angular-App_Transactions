@@ -1,0 +1,83 @@
+
+.app-transaction {
+    border-top: 1px solid #ccc;
+    display: flex;
+    border-right: 1px solid #ccc;
+}
+.last-child{
+    border-bottom: 1px solid #ccc;
+}
+.recent-transaction{
+    .recent-transaction-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background: #0c8397;
+        color: #fff;
+        padding: 1em;
+        >div:first-child{
+            flex: 1;
+        }
+        >div:last-child{
+            flex: 2;
+            h3{
+                margin: 0;
+            }
+        }
+    }
+}
+.recent-transaction-main{
+    padding: 1.5em;
+    .recent-transaction-search{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1em;
+        flex-direction: column;
+        .mat-form-field .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-label{
+            display: block !important;
+        }
+        button{
+            background: transparent;
+            border: 0;
+            color: #ccc;
+        }
+        .recent-transaction-sort {
+            display: flex;
+            align-items: center;
+            margin: 1em 0;
+            .label{
+                color: #000;
+                font-size: .75rem;
+                font-weight: bolder;
+            }
+            ul {
+                display: flex;
+                list-style: none;
+                padding: 0;
+                margin: 0 0 0 1em;
+                li{
+                    padding: .20em 2em;
+                    border: 1px solid #ccc;
+                    text-transform: uppercase;
+                    color: #000;
+                    font-size: 0.75rem;
+                    font-weight: bolder;
+                    display: flex;
+                    align-items: center;
+                    &:nth-child(2){
+                            border-right: 0;
+                            border-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 800px) {
+    .recent-transaction-main{
+        .recent-transaction-search{
+            flex-direction:row;
+            align-items: center;
+        }
+    }
+}

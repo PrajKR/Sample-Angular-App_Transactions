@@ -1,0 +1,40 @@
+.transfer {
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.3);
+    background-color: #fff;
+    .transfer-header {
+        display: flex;
+        align-items: center;
+        background: #0c8397;
+        color: #f2f2f2;
+        padding: .5em 1em;
+        >div:first-child{
+            flex: 1;
+        }
+        >div:last-child{
+            flex: 2;
+            h3{
+                margin: 0;
+            }
+        }
+        .avator{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .transfer-form {
+        padding: 1.5em;
+        .form-btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 1em 0;
+           .primary{
+            width: 150px;
+            padding: 1em;
+           }
+        }
+     .error{
+         color: #ee7033;
+     }
+    }
+}

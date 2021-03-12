@@ -1,0 +1,32 @@
+<div class="recent-transaction">
+    <div class="recent-transaction-header">
+        <div>
+            <mat-icon aria-hidden="false" aria-label=" briefcase">work</mat-icon>
+        </div>
+        <div><h3 class="transfer-heading">Recent Transaction</h3></div>
+    </div>
+</div>
+<div class="recent-transaction-main">
+    <div class="recent-transaction-search">
+        <div class="form-field">
+            <mat-form-field class="example-form-field">
+                <mat-label>Search by typing</mat-label>
+                <input matInput type="text" [(ngModel)]="searchTxt" (keyup)="applyFilter(searchTxt)" />
+                <button mat-button *ngIf="searchTxt" matSuffix mat-icon-button aria-label="Clear" (click)="searchTxt=''; applyFilter('')">
+                    <mat-icon>clear</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div class="recent-transaction-sort">
+            <label class="label">Sort By</label>
+            <div>
+                <ul>
+                    <li (click)="sortTransactionsBy('valueDate')">Date<mat-icon *ngIf="activeField=='valueDate'">{{(sortedASC['valueDate']?'arrow_drop_up':'arrow_drop_down')}}</mat-icon></li>
+                    <li (click)="sortTransactionsBy('name')">Beneficiary<mat-icon *ngIf="activeField=='name'">{{(sortedASC['name']?'arrow_drop_up':'arrow_drop_down')}}</mat-icon></li>
+                    <li (click)="sortTransactionsBy('amount')">Amount<mat-icon *ngIf="activeField=='amount'">{{(sortedASC['amount']?'arrow_drop_up':'arrow_drop_down')}}</mat-icon></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <app-transaction *ngFor="let transaction of filteredTransactions;let last = last" [transaction]="transaction" [ngClass]="{'last-child': last}" class="app-transaction"></app-transaction>
+</div>

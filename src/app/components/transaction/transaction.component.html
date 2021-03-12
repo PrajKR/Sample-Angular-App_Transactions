@@ -1,0 +1,12 @@
+<div class="transaction-item" >
+    <div class="color" [ngStyle]="{'background': transaction.categoryCode}"></div>
+    <div class="transaction-details">
+        <div>{{transaction.dates.valueDate | date:'LLL. dd'}}</div>
+        <div><img [src]="getIcon(transaction.merchant.name)" /></div>
+        <div class="name">
+            <h4>{{transaction.merchant.name}}</h4>
+            <p>{{transaction.transaction.type}}</p>
+        </div>
+        <div><h4 class="currency">{{transaction.transaction.amountCurrency.amount | currency: 'USD'}}</h4></div>
+    </div>
+</div>

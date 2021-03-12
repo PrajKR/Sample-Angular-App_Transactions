@@ -1,0 +1,22 @@
+<h4 mat-dialog-title>Preview Transaction</h4>
+<hr>
+<mat-dialog-content>
+    <ul>
+        <li>
+            <label>From Account :</label>
+            <label class="value"><b>{{data.from}}</b></label>
+        </li>
+        <li>
+            <label>To Account :</label>
+            <label class="value"><b>{{data.to}}</b></label>
+        </li>
+        <li>
+            <label>Amount :</label>
+            <label class="value"><b>${{data.amount}}</b></label>
+        </li>
+    </ul>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close class="btn default">Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial class="btn primary">Transfer</button>
+</mat-dialog-actions>

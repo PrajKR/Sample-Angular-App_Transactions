@@ -1,0 +1,126 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+    font-size: .75rem;
+    line-height: 1.5rem;
+    color: #5f6368;
+    background-image: url(../src/assets/background.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font: .75rem 'Kanit', sans-serif !important;
+    font-family: 'Kanit', sans-serif !important;
+}
+h1,h2,h3,h4{
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    font: 'Kanit', sans-serif !important;
+    letter-spacing: normal;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+h1{
+    font-size: 2rem;
+}
+h2{
+    font-size: 1.5rem;
+}
+h3{
+    font-size: 1rem;
+}
+h4{
+    font-size: 0.75rem;
+    font-weight:bolder;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 0.25rem;
+}
+.btn {
+    padding: 0.65em 1em;
+    border: 0;
+    border-radius: 5px;
+    font-size: .75rem;
+    cursor: pointer;
+    color: #fff;
+    &:focus{
+        outline: 0;
+    }
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+}
+.default{
+    background-color: #5f6368;
+    &:hover{
+        background-color: #202124;
+    }
+}
+.primary{
+    background-color: #ee7033;
+    &:hover{
+        background-color: #ff6a23;
+    }
+}
+
+.mat-form-field{
+    width: 100%;
+    font-family: 'Kanit' !important;
+    .mat-form-field-wrapper{
+        .mat-form-field-flex {
+            background-color:#fff;
+            .mat-select-value {
+                color:#202124;
+            }
+            
+        }
+         .mat-form-field-flex,.mat-form-field-infix{
+            padding: 0 0 0.5em !important;
+            .mat-input-element:disabled, .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after {
+                color: inherit;
+            }
+        }
+    }
+}
+.mat-form-field-should-float.mat-focused{
+    .mat-form-field-wrapper{
+        .mat-form-field-flex{
+            .mat-form-field-label-wrapper{
+                display: none !important
+            }
+        }
+    }
+}
+.mat-input-element {
+    caret-color: #0c8397;
+}
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled),.mat-form-field.mat-focused.mat-primary .mat-select-arrow  {
+    color: #0c8397 !important;
+}
+.mat-focused .mat-form-field-ripple {
+    background-color: #0c8397 !important;
+}
+.mat-focused .mat-form-field-label {
+    color:#0c8397 !important;
+ }
+.recent-transaction-search{
+    .mat-form-field .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-label{
+        display: block !important;
+    }
+}
+@media (min-width: 800px) {
+    .main{
+        grid-template-columns: 1fr 2fr;
+    }
+    app-transaction-list {
+        grid-column: 2 / span 2;
+    }
+}
+

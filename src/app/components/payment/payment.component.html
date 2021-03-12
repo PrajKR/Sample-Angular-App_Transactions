@@ -1,0 +1,24 @@
+<section class="transfer">
+    <article class="transfer-header">
+        <div><mat-icon>sync</mat-icon></div>
+        <div><h3 class="transfer-heading">Make a Transfer</h3></div>
+    </article>
+    <article class="transfer-form">
+          <h4>From account</h4>
+          <mat-form-field class="example-full-width" >
+            <input matInput  value="Free Checking(4692) - ${{balance}}" disabled>
+          </mat-form-field>
+          <h4>to account</h4>
+          <mat-form-field appearance="fill">
+            <mat-select [(value)]="paymentData.to">
+              <mat-option *ngFor="let account of accounts" [value]="account">{{account}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <h4>amount</h4>
+          <mat-form-field class="example-full-width">
+            <input type="number" matInput  [(ngModel)]="paymentData.amount" min="1" max="(balance+500)" step=".01" placeholder="$ 0.00">
+          </mat-form-field>
+          <span class="error" *ngIf="paymentData.amount>balance+500">Maxmimum overdraft allowed is $500</span>
+          <div class="form-btn"><button (click)="openPreviewDialog()" [disabled]="paymentData.amount<1 || paymentData.amount>balance+500" class="btn primary">SUBMIT</button></div>
+    </article>
+</section>
